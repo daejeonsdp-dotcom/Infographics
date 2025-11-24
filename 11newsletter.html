@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사회민주당 대전시당 11월 활동 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 250px;
+            max-height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 350px;
+            }
+        }
+        .party-orange { color: #F58400; }
+        .party-green { color: #43A213; }
+        .bg-party-orange { background-color: #F58400; }
+        .bg-party-green { background-color: #43A213; }
+        .border-party-orange { border-color: #F58400; }
+        .border-party-green { border-color: #43A213; }
+        .shadow-orange-lg { box-shadow: 0 10px 15px -3px rgba(245, 132, 0, 0.2), 0 4px 6px -2px rgba(245, 132, 0, 0.1); }
+        .shadow-green-lg { box-shadow: 0 10px 15px -3px rgba(67, 162, 19, 0.2), 0 4px 6px -2px rgba(67, 162, 19, 0.1); }
+        html {
+            scroll-behavior: smooth;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+    </style>
+    <!-- Chosen Palette: Calm & Supportive (Gray-50 BG, Gray-800 Text, #F58400 & #43A213 Accents) -->
+    <!-- Application Structure Plan: [The application uses a single-page, multi-section layout with a sticky header for navigation ('핵심 논평', '정책 포커스', '주요 활동', '참여 안내'). This structure prioritizes the party's key political stances (Jjokbangchon, CTX) first, followed by supporting activities and a final call-to-action. This narrative flow (Stance -> Action -> Invitation) is more intuitive for a political infographic than mirroring the newsletter's linear format. Interactions include a toggle-to-expand section for the 'Jjokbangchon 6 Principles' to reduce initial clutter, and a bar chart to visually emphasize the CTX cost comparison, making the core arguments more digestible.] -->
+    <!-- Visualization & Content Choices: [1. Jjokbangchon Commentary -> Goal: Organize/Inform -> Viz: Text Summary + JS Toggle List (HTML/CSS) -> Interaction: Click 'Read More' to expand 6 principles -> Justification: Keeps main view clean, details on demand. (NO SVG/Mermaid). 2. CTX Cost Data -> Goal: Compare -> Viz: Horizontal Bar Chart (Chart.js/Canvas) -> Interaction: Hover Tooltip -> Justification: Visually proves the '1/10th cost' argument effectively. (NO SVG/Mermaid). 3. Monthly Activities -> Goal: Inform -> Viz: 2-Column HTML/Tailwind Cards + Unicode Icons -> Interaction: None (Static) -> Justification: Clean, parallel presentation of activities. (NO SVG/Mermaid). 4. Year-end Party & CTA -> Goal: Inform/Action -> Viz: HTML/Tailwind Cards & Button -> Interaction: Clickable Link -> Justification: Clear separation of event info and final CTA. (NO SVG/Mermaid).] -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="sticky-header bg-white shadow-md">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-extrabold party-green">사회민주당</span>
+                    <span class="ml-2 text-2xl font-bold text-gray-700">대전시당</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <button onclick="scrollToSection('section-commentary')" class="text-gray-600 hover:party-orange px-3 py-2 rounded-md text-sm font-medium">핵심 논평</button>
+                        <button onclick="scrollToSection('section-policy')" class="text-gray-600 hover:party-orange px-3 py-2 rounded-md text-sm font-medium">정책 포커스</button>
+                        <button onclick="scrollToSection('section-activities')" class="text-gray-600 hover:party-orange px-3 py-2 rounded-md text-sm font-medium">주요 활동</button>
+                        <button onclick="scrollToSection('section-join')" class="text-gray-600 hover:party-orange px-3 py-2 rounded-md text-sm font-medium">참여 안내</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <section id="section-intro" class="text-center mb-16">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+                <span class="party-green">정치를 새롭게, 복지를 강하게!</span><br>
+                <span class="mt-2 block text-2xl md:text-3xl font-bold text-gray-700">사회민주당 대전시당 11월 활동 리포트</span>
+            </h1>
+            <p class="mt-4 text-lg text-gray-600">2025년 11월, 대전시당의 핵심 입장과 활동을 지금 확인해 보세요.</p>
+        </section>
+
+        <section id="section-commentary" class="mb-16">
+            <div class="bg-party-orange text-white rounded-lg shadow-orange-lg p-6 md:p-8">
+                <h2 class="text-base font-semibold tracking-wide uppercase">📌 핵심 논평 (11.19)</h2>
+                <h3 class="mt-2 text-2xl md:text-3xl font-extrabold text-white">대전역 쪽방촌 정비, 개발보다 주민의 존엄과 권리가 먼저다</h3>
+                <p class="mt-4 text-lg text-orange-50">
+                    대전역세권 개발계획 추진과 관련하여, 사회민주당 대전시당은 대규모 개발 중심 논의를 경계합니다. 쪽방촌 정비는 도시 미관 개선이 아닌, 주민의 **주거권과 존엄을 최우선**하는 사회적 의무입니다.
+                </p>
+                <p class="mt-3 text-lg text-orange-50">
+                    우리는 주민 수용성 확보, 이주 안정성 보장, 임대료 현실성 검증, 젠트리피케이션 방지 등 **6가지 핵심 원칙**을 강력히 촉구합니다. 도시의 미래는 고층 빌딩이 아니라, 가장 취약한 시민을 대우하는 방식에 달려 있습니다.
+                </p>
+                <div class="mt-6">
+                    <button onclick="toggleDetails('jjokbangchon-details')" class="inline-block bg-white text-party-orange font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-orange-50">
+                        6가지 핵심 원칙 자세히 보기
+                    </button>
+                    <div id="jjokbangchon-details" class="hidden mt-6 bg-orange-700 bg-opacity-50 p-4 rounded-md">
+                        <ol class="list-decimal list-inside space-y-2 text-orange-100">
+                            <li>**주민 수용성 확보:** '일정 맞추기'가 아닌 개별 상담, 맞춤형 이주 계획 우선.</li>
+                            <li>**이주 안정성 보장:** 임시 거주지의 질과 생활권 보장, 실질적 강제 이주 방지.</li>
+                            <li>**임대료/주거 면적 현실성 검증:** 준공 이후 임대료/관리비 상승 가능성 검증.</li>
+                            <li>**젠트리피케이션 방지 대책:** 원주민 재정착 및 장기 공공임대상가 확보 병행.</li>
+                            <li>**사업 리스크 평가 선행:** PF 금융 불안정 등 위험 평가, 투명한 사업성 검토.</li>
+                            <li>**행정의 책임성과 투명성:** 모든 과정 투명 공개 및 주민 참여 감시/협의 구조 마련.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-policy" class="mb-16">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">💡 정책 포커스: CTX 재검토 촉구</h2>
+            <h3 class="text-xl font-bold party-orange mb-6">"속도 경쟁"이 아닌 "생활 교통 복지" 중심의 지속 가능한 교통체계 구축</h3>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <p class="text-lg text-gray-700 mb-6">
+                    총사업비 5조 원이 넘는 충청권 광역급행철도(CTX) 사업은 지방정부의 재정 부담(약 7,650억 원 이상)과 민자사업의 불확실성이라는 심각한 리스크를 안고 있습니다. 사회민주당 대전시당은 CTX를 **'준비되지 않은 약속'**으로 규정하며 전면 재검토를 촉구합니다.
+                </p>
+
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold text-center text-gray-800 mb-2">예상 사업비 비교 (단위: 조 원)</h4>
+                    <div class="chart-container">
+                        <canvas id="costChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-6 border border-party-orange bg-orange-50 rounded-lg">
+                    <h4 class="text-xl font-bold party-orange mb-3">핵심 대안: 공공철도 및 BRT 연계</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>
+                            <span class="font-bold">대안 요구:</span>
+                            공공철도 및 BRT(간선급행버스) 연계망 확충으로 전환해야 합니다.
+                        </li>
+                        <li>
+                            <span class="font-bold">효율성:</span>
+                            기존 BRT 노선의 고도화(BRT-X)는 CTX의 **10분의 1 이하 비용**으로 유사한 급행 정시성 확보가 가능합니다.
+                        </li>
+                        <li>
+                            <span class="font-bold">원칙:</span>
+                            정치적 속도전이 아닌, 재정 건전성과 시민 중심의 생활 교통 철학이 우선되어야 합니다.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-activities" class="mb-16">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6">✅ 11월 주요 활동 보고</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="text-3xl mr-3">🌳</span>
+                            <div>
+                                <h3 class="text-xl font-bold party-green">보문산 지킴이 활동</h3>
+                                <p class="text-sm font-medium text-gray-500">11월 16일</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-700">
+                            <span class="font-bold">배경:</span> 대전의 중요한 녹지 공간인 보문산을 지키고 환경 보존의 중요성을 알리기 위해 당원들이 환경 정화 활동에 참여했습니다.
+                        </p>
+                        <p class="mt-2 text-gray-700">
+                            <span class="font-bold">핵심 내용:</span> 보문산 일대 쓰레기 수거 및 시민들에게 환경 보호 캠페인 진행. 지속가능한 지역 환경 정책 마련의 의지를 다짐.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="text-3xl mr-3">🍲</span>
+                            <div>
+                                <h3 class="text-xl font-bold party-green">대전역 급식 봉사</h3>
+                                <p class="text-sm font-medium text-gray-500">11월 19일</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-700">
+                            <span class="font-bold">배경:</span> 다가오는 겨울, 대전역 일대 노숙인 등 취약계층의 따뜻한 식사를 지원하기 위해 당원들이 봉사 활동에 참여했습니다.
+                        </p>
+                        <p class="mt-2 text-gray-700">
+                            <span class="font-bold">핵심 내용:</span> 단순히 봉사를 넘어, 식사 제공과 함께 복지 정보 상담을 병행하며 사회적 안전망의 사각지대 해소를 위해 노력했습니다.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="section-join" class="mb-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6">🗓️ 참여 안내: 함께 만드는 사회민주당</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-white rounded-lg shadow-green-lg border border-party-green p-6 md:p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold party-green mb-4">사회민주당 대전시당 송년회 안내</h3>
+                        <p class="text-lg font-bold text-gray-800">2025년을 돌아보며, 2026년 승리를 다짐합니다!</p>
+                        <ul class="mt-4 space-y-2 text-gray-700">
+                            <li><span class="font-bold">일시:</span> 11월 30일 (일) 오후 5시</li>
+                            <li><span class="font-bold">장소:</span> 대전충남간호조무사회 (대전 서구 문정로 64 솔림빌딩 7층 701호)</li>
+                            <li class="text-sm text-gray-500">(시청역 8번 출구 또는 탄방역 5번 출구에서 도보 이동 가능)</li>
+                            <li><span class="font-bold text-lg party-orange">참가 회비:</span> 20,000원</li>
+                        </ul>
+                    </div>
+                    <p class="mt-6 pt-4 border-t border-dashed border-gray-300 italic text-gray-600">
+                        2025년 한 해 동안 함께 해주신 당원 여러분께 깊이 감사드립니다. 소중한 한 걸음, 송년회에서 함께 해요!
+                    </p>
+                </div>
+                
+                <div class="bg-party-green text-white rounded-lg shadow-lg p-6 md:p-8 flex flex-col justify-center text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">🤝 함께 만드는 사회민주당</h3>
+                    <p class="text-lg text-green-100 mb-6">
+                        당원 한 분 한 분의 목소리가 사회민주당을 강하게 만듭니다. 지금 바로 우리의 활동에 동참하여 더 나은 대전을 만들어 주세요!
+                    </p>
+                    <a href="https://www.socialminjoo.kr/donate" target="_blank" class="inline-block bg-white text-party-green font-bold py-3 px-6 rounded-lg text-lg transition duration-300 ease-in-out hover:bg-gray-100 shadow-md">
+                        후원/참여 바로가기
+                    </a>
+                    <p class="mt-4 text-green-200">
+                        <span class="font-bold">문의:</span> 사회민주당 대전시당 사무처 (042-XXX-XXXX)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 text-center p-6 mt-16">
+        <p>&copy; 2025 사회민주당 대전시당. All rights reserved.</p>
+        <p class="text-sm">정치를 새롭게, 복지를 강하게</p>
+    </footer>
+
+    <script>
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.classList.toggle('hidden');
+            }
+        }
+
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('costChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['충청권 광역급행철도 (CTX)', 'BRT-X 고도화 대안'],
+                        datasets: [{
+                            label: '예상 사업비 (단위: 조 원)',
+                            data: [5, 0.52],
+                            backgroundColor: [
+                                'rgba(245, 132, 0, 0.7)',
+                                'rgba(67, 162, 19, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(245, 132, 0, 1)',
+                                'rgba(67, 162, 19, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        maintainAspectRatio: false,
+                        responsive: true,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: '조 원 (KRW Trillion)',
+                                    font: {
+                                        weight: 'bold'
+                                    }
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: function(tooltipItems) {
+                                        const item = tooltipItems[0];
+                                        let label = item.chart.data.labels[item.dataIndex];
+                                        if (Array.isArray(label)) {
+                                          return label.join(' ');
+                                        } else {
+                                          return label;
+                                        }
+                                    },
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.x !== null) {
+                                            label += context.parsed.x + ' 조 원';
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
