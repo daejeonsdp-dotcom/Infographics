@@ -26,6 +26,7 @@
                 max-height: 350px;
             }
         }
+        /* Custom Party Colors */
         .party-orange { color: #F58400; }
         .party-green { color: #43A213; }
         .bg-party-orange { background-color: #F58400; }
@@ -43,13 +44,10 @@
             z-index: 50;
         }
     </style>
-    <!-- Chosen Palette: Calm & Supportive (Gray-50 BG, Gray-800 Text, #F58400 & #43A213 Accents) -->
-    <!-- Application Structure Plan: [The application uses a single-page, multi-section layout with a sticky header for navigation ('핵심 논평', '정책 포커스', '주요 활동', '참여 안내'). This structure prioritizes the party's key political stances (Jjokbangchon, CTX) first, followed by supporting activities and a final call-to-action. This narrative flow (Stance -> Action -> Invitation) is more intuitive for a political infographic than mirroring the newsletter's linear format. Interactions include a toggle-to-expand section for the 'Jjokbangchon 6 Principles' to reduce initial clutter, and a bar chart to visually emphasize the CTX cost comparison, making the core arguments more digestible.] -->
-    <!-- Visualization & Content Choices: [1. Jjokbangchon Commentary -> Goal: Organize/Inform -> Viz: Text Summary + JS Toggle List (HTML/CSS) -> Interaction: Click 'Read More' to expand 6 principles -> Justification: Keeps main view clean, details on demand. (NO SVG/Mermaid). 2. CTX Cost Data -> Goal: Compare -> Viz: Horizontal Bar Chart (Chart.js/Canvas) -> Interaction: Hover Tooltip -> Justification: Visually proves the '1/10th cost' argument effectively. (NO SVG/Mermaid). 3. Monthly Activities -> Goal: Inform -> Viz: 2-Column HTML/Tailwind Cards + Unicode Icons -> Interaction: None (Static) -> Justification: Clean, parallel presentation of activities. (NO SVG/Mermaid). 4. Year-end Party & CTA -> Goal: Inform/Action -> Viz: HTML/Tailwind Cards & Button -> Interaction: Clickable Link -> Justification: Clear separation of event info and final CTA. (NO SVG/Mermaid).] -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+    <!-- Sticky Header for Navigation -->
     <header class="sticky-header bg-white shadow-md">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -57,6 +55,7 @@
                     <span class="text-2xl font-extrabold party-green">사회민주당</span>
                     <span class="ml-2 text-2xl font-bold text-gray-700">대전시당</span>
                 </div>
+                <!-- Desktop Navigation Links -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <button onclick="scrollToSection('section-commentary')" class="text-gray-600 hover:party-orange px-3 py-2 rounded-md text-sm font-medium">핵심 논평</button>
@@ -71,6 +70,7 @@
 
     <main class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
 
+        <!-- Introduction Section -->
         <section id="section-intro" class="text-center mb-16">
             <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
                 <span class="party-green">정치를 새롭게, 복지를 강하게!</span><br>
@@ -79,6 +79,7 @@
             <p class="mt-4 text-lg text-gray-600">2025년 11월, 대전시당의 핵심 입장과 활동을 지금 확인해 보세요.</p>
         </section>
 
+        <!-- 1. Commentary (Jjokbangchon) Section -->
         <section id="section-commentary" class="mb-16">
             <div class="bg-party-orange text-white rounded-lg shadow-orange-lg p-6 md:p-8">
                 <h2 class="text-base font-semibold tracking-wide uppercase">📌 핵심 논평 (11.19)</h2>
@@ -107,6 +108,7 @@
             </div>
         </section>
 
+        <!-- 2. Policy Focus (CTX) Section with Chart -->
         <section id="section-policy" class="mb-16">
             <h2 class="text-3xl font-extrabold text-gray-900 mb-2">💡 정책 포커스: CTX 재검토 촉구</h2>
             <h3 class="text-xl font-bold party-orange mb-6">"속도 경쟁"이 아닌 "생활 교통 복지" 중심의 지속 가능한 교통체계 구축</h3>
@@ -143,6 +145,7 @@
             </div>
         </section>
 
+        <!-- 3. Monthly Activities Section -->
         <section id="section-activities" class="mb-16">
             <h2 class="text-3xl font-extrabold text-gray-900 mb-6">✅ 11월 주요 활동 보고</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -150,7 +153,7 @@
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="p-6">
                         <div class="flex items-center">
-                            <span class="text-3xl mr-3">🌳</span>
+                            <span class="text-3xl mr-3">🌳</span> <!-- Environmental Icon -->
                             <div>
                                 <h3 class="text-xl font-bold party-green">보문산 지킴이 활동</h3>
                                 <p class="text-sm font-medium text-gray-500">11월 16일</p>
@@ -168,7 +171,7 @@
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="p-6">
                         <div class="flex items-center">
-                            <span class="text-3xl mr-3">🍲</span>
+                            <span class="text-3xl mr-3">🍲</span> <!-- Meal Service Icon -->
                             <div>
                                 <h3 class="text-xl font-bold party-green">대전역 급식 봉사</h3>
                                 <p class="text-sm font-medium text-gray-500">11월 19일</p>
@@ -186,10 +189,12 @@
             </div>
         </section>
 
+        <!-- 4. Join & CTA Section -->
         <section id="section-join" class="mb-8">
             <h2 class="text-3xl font-extrabold text-gray-900 mb-6">🗓️ 참여 안내: 함께 만드는 사회민주당</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
+                <!-- Year-end Party Info -->
                 <div class="bg-white rounded-lg shadow-green-lg border border-party-green p-6 md:p-8 flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-bold party-green mb-4">사회민주당 대전시당 송년회 안내</h3>
@@ -206,17 +211,16 @@
                     </p>
                 </div>
                 
+                <!-- CTA / Link to Blog Post -->
                 <div class="bg-party-green text-white rounded-lg shadow-lg p-6 md:p-8 flex flex-col justify-center text-center">
                     <h3 class="text-2xl font-bold text-white mb-4">🤝 함께 만드는 사회민주당</h3>
                     <p class="text-lg text-green-100 mb-6">
                         당원 한 분 한 분의 목소리가 사회민주당을 강하게 만듭니다. 지금 바로 우리의 활동에 동참하여 더 나은 대전을 만들어 주세요!
                     </p>
-                    <a href="https://daejeonsdp-dotcom.github.io/Infographics/" target="_blank" class="inline-block bg-white text-party-green font-bold py-3 px-6 rounded-lg text-lg transition duration-300 ease-in-out hover:bg-gray-100 shadow-md">
-                        후원/참여 바로가기
+                    <!-- UPDATED LINK -->
+                    <a href="https://samindangdaejeon.blogspot.com/2025/11/blog-post_75.html" target="_blank" class="inline-block bg-white text-party-green font-bold py-3 px-6 rounded-lg text-lg transition duration-300 ease-in-out hover:bg-gray-100 shadow-md">
+                        활동/참여 자세히 보기
                     </a>
-                    <p class="mt-4 text-green-200">
-                        <span class="font-bold">문의:</span> 사회민주당 대전시당
-                    </p>
                 </div>
             </div>
         </section>
@@ -226,9 +230,11 @@
     <footer class="bg-gray-800 text-gray-400 text-center p-6 mt-16">
         <p>&copy; 2025 사회민주당 대전시당. All rights reserved.</p>
         <p class="text-sm">정치를 새롭게, 복지를 강하게</p>
+        <!-- Removed the phone number line as requested -->
     </footer>
 
     <script>
+        // JavaScript for toggling the 6 Principles details
         function toggleDetails(id) {
             const element = document.getElementById(id);
             if (element) {
@@ -236,13 +242,19 @@
             }
         }
 
+        // JavaScript for smooth scrolling in the navigation
         function scrollToSection(id) {
             const section = document.getElementById(id);
             if (section) {
-                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Scroll to the element, starting slightly below the top to account for the sticky header
+                window.scroll({
+                    top: section.offsetTop - 70, // Adjust 70px for header height
+                    behavior: 'smooth'
+                });
             }
         }
 
+        // Chart.js initialization for the CTX cost comparison bar chart
         document.addEventListener('DOMContentLoaded', () => {
             const ctx = document.getElementById('costChart');
             if (ctx) {
@@ -252,10 +264,10 @@
                         labels: ['충청권 광역급행철도 (CTX)', 'BRT-X 고도화 대안'],
                         datasets: [{
                             label: '예상 사업비 (단위: 조 원)',
-                            data: [5, 0.52],
+                            data: [5, 0.52], // CTX (5조), BRT-X (5,000억 = 0.52조)
                             backgroundColor: [
-                                'rgba(245, 132, 0, 0.7)',
-                                'rgba(67, 162, 19, 0.7)'
+                                'rgba(245, 132, 0, 0.7)', // Orange for CTX
+                                'rgba(67, 162, 19, 0.7)' // Green for BRT-X alternative
                             ],
                             borderColor: [
                                 'rgba(245, 132, 0, 1)',
@@ -265,7 +277,7 @@
                         }]
                     },
                     options: {
-                        indexAxis: 'y',
+                        indexAxis: 'y', // Horizontal bar chart
                         maintainAspectRatio: false,
                         responsive: true,
                         scales: {
@@ -297,10 +309,11 @@
                                     title: function(tooltipItems) {
                                         const item = tooltipItems[0];
                                         let label = item.chart.data.labels[item.dataIndex];
+                                        // Handle multiline labels if necessary, though not used here
                                         if (Array.isArray(label)) {
-                                          return label.join(' ');
+                                            return label.join(' ');
                                         } else {
-                                          return label;
+                                            return label;
                                         }
                                     },
                                     label: function(context) {
@@ -309,6 +322,7 @@
                                             label += ': ';
                                         }
                                         if (context.parsed.x !== null) {
+                                            // Format the value with '조 원'
                                             label += context.parsed.x + ' 조 원';
                                         }
                                         return label;
@@ -324,3 +338,4 @@
 
 </body>
 </html>
+
