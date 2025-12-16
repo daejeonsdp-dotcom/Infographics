@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한민국 에너지 구조 개혁 정책 보고서</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background for policy focus */
+        }
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 8rem;
+            text-align: center;
+            color: #ffffff;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        /* Custom styles for professional look */
+        .policy-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #38bdf8; /* Sky Blue */
+        }
+        .policy-subtitle {
+            font-size: 1.8rem;
+            color: #94a3b8; /* Slate */
+            margin-top: 1rem;
+        }
+        .content-box {
+            background-color: rgba(30, 41, 59, 0.8); /* Dark Slate background for content */
+            padding: 2rem;
+            border-radius: 1.5rem;
+            max-width: 90%;
+            margin-top: 2rem;
+            text-align: left;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .list-item {
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+        .highlight {
+            color: #4ade80; /* Green for key action items */
+            font-weight: 600;
+        }
+        .table-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+
+    <!-- Slides Container -->
+    <div id="presentation-container" class="relative">
+        
+        <!-- SLIDE 1: 표지 (Title Slide) -->
+        <section id="slide-1" class="slide active">
+            <div class="space-y-6">
+                <h1 class="policy-title">대한민국 에너지 구조 개혁 및 기후 정의 실현을 위한 정책 보고서</h1>
+                <h2 class="policy-title text-4xl text-white">대전시를 관통하는 신계룡-북천안 송전선로 건설 계획의 부당성</h2><br>
+                <div class="policy-subtitle mt-8 space-y-2">
+                    <p><span class="highlight">사회민주당 대전시당</span></p><br>
+                    <p class="text-xl mt-4"> 2025년 12월 17일</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Ⅰ. 서론: 문제의 심각성 -->
+        <section id="slide-2" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">Ⅰ. 서론: '지방 희생-수도권 특혜' 구조의 심각성</h2>
+            <div class="content-box max-w-4xl space-y-6">
+                <h3 class="text-2xl font-bold text-gray-200">핵심 문제 진단: 약탈적 성장 모델 고착화</h3>
+                <ul class="list-disc list-inside text-lg space-y-3 text-gray-300">
+                    <li class="list-item">지방의 자원 및 환경 착취 → 수도권 대기업 이익 극대화.</li>
+                    <li class="list-item">지역 간 불평등 및 기후 위기 책임을 <span class="highlight">비수도권에 일방적으로 전가</span>.</li>
+                </ul>
+                
+                <h3 class="text-2xl font-bold text-gray-200 mt-6">구조적 모순: '에너지 식민지화' 구조</h3>
+                <ul class="list-disc list-inside text-lg space-y-3 text-gray-300">
+                    <li class="list-item">2050년 탄소 중립 목표 달성을 근본적으로 불가능하게 만드는 핵심 원인.</li>
+                    <li class="list-item">현안의 상징: <span class="text-red-400 font-semibold">대전시를 관통하는 신계룡-북천안 송전선로 건설 계획의 부당성</span>.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Ⅱ. 실태: 기형적인 전력 불균형 -->
+        <section id="slide-3" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">Ⅱ. 실태: '지방 생산 vs. 수도권 소비' 전력 불균형</h2>
+            <div class="table-container text-gray-800">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base font-semibold">
+                    <!-- Header -->
+                    <div class="bg-blue-300 p-3 rounded-t-lg">지역</div>
+                    <div class="bg-blue-300 p-3 rounded-t-lg">전력 자립률</div>
+                    <div class="bg-blue-300 p-3 rounded-t-lg col-span-2">문제점 (위험 외주)</div>
+
+                    <!-- Row 1: 충청남도 -->
+                    <div class="bg-white p-3 font-bold">충청남도</div>
+                    <div class="bg-white p-3 font-bold text-green-600">210% 이상</div>
+                    <div class="bg-white p-3 col-span-2">전국 석탄화력 절반 밀집, 오염 물질 및 위험 부담 전담.</div>
+
+                    <!-- Row 2: 경상북도 -->
+                    <div class="bg-gray-100 p-3 font-bold">경상북도</div>
+                    <div class="bg-gray-100 p-3 font-bold text-green-600">약 200%</div>
+                    <div class="bg-gray-100 p-3 col-span-2">원자력 발전소 집중, 송전망 건설 부담 감수.</div>
+
+                    <!-- Row 3: 서울특별시 -->
+                    <div class="bg-white p-3 font-bold">서울특별시</div>
+                    <div class="bg-white p-3 font-bold text-red-600">10% 미만</div>
+                    <div class="bg-white p-3 col-span-2">소비량 90% 이상 지방 송전, 환경적 부담 전무 (<span class="text-red-600">혜택 독점</span>).</div>
+
+                    <!-- Row 4: 경기도 -->
+                    <div class="bg-gray-100 p-3 font-bold rounded-b-lg">경기도</div>
+                    <div class="bg-gray-100 p-3 font-bold text-yellow-600 rounded-b-lg">약 60%</div>
+                    <div class="bg-gray-100 p-3 col-span-2 rounded-b-lg">반도체/데이터센터 등 시설 밀집, 수요 폭증.</div>
+                </div>
+            </div>
+             <p class="text-xl font-bold mt-6 text-red-400">결론: 비수도권은 '위험', 수도권은 '혜택'만 독점하는 극심한 불균형 구조.</p>
+        </section>
+
+        <!-- SLIDE 4: Ⅱ. 구조적 리스크: 현 정책의 다층적 문제점 -->
+        <section id="slide-4" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">현 에너지 정책의 7대 구조적 리스크</h2>
+            <div class="content-box max-w-5xl space-y-3">
+                <ul class="grid grid-cols-2 gap-x-8 gap-y-4 text-lg text-gray-300">
+                    <li class="list-item">1. 기후 정의: 발전·송전 피해의 지방 집중 심화.</li>
+                    <li class="list-item">2. 지역 균형 발전: 국토 균형 발전 목표와의 정면 충돌 및 지방 소멸 가속화.</li>
+                    <li class="list-item">3. 경제적 비효율: 수조 원의 장거리 송전 인프라 비용 낭비 (전기요금 인상 요인).</li>
+                    <li class="list-item">4. 에너지 안보: 중앙 집중형 전력망의 취약성 및 블랙아웃 위험.</li>
+                    <li class="list-item">5. 산업 정책: 수도권 고전력 산업 확대로 인한 고탄소 배출 경로 고착화 위험.</li>
+                    <li class="list-item">6. 글로벌 경쟁력: RE100 시대에 역행, 국내 수출 기업의 경쟁력 약화.</li>
+                    <li class="list-item">7. 사회적 갈등: '폭탄돌리기'식 입지선정 과정과 주민 자기 결정권 침해.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Ⅱ. 신계룡-북천안 송전선로의 본질 -->
+        <section id="slide-5" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">신계룡-북천안 송전선로: 지역 희생 강요의 상징</h2>
+            <div class="content-box max-w-3xl space-y-6">
+                <div class="text-2xl font-bold text-sky-300">생산지 (전력 기원)</div>
+                <p class="text-xl text-gray-300 pl-4">호남권 및 충남 일대(태안, 당진 등)의 발전소에서 생산되는 과잉 전력.</p>
+                
+                <div class="text-2xl font-bold text-sky-300 pt-4">최종 소비지 (전력 목적지)</div>
+                <p class="text-xl text-gray-300 pl-4">용인 반도체 국가산업단지 등 <span class="highlight">수도권 첨단 산업단지</span>.</p>
+
+                <div class="text-2xl font-bold text-red-400 pt-4">본질 (대전시의 입장)</div>
+                <p class="text-2xl text-red-400 font-bold pl-4">대전시는 해당 전력을 소비하지 않으면서, 수도권 대기업 이익을 위한 <span class="text-yellow-300">일방적인 희생양</span>으로 강요받고 있음.</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Ⅲ. 탄소 중립 분석: 정책 전환의 시급성 -->
+        <section id="slide-6" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">2050 탄소 중립 달성 가능성: 근본적인 정책 전환 필수</h2>
+            <div class="content-box max-w-4xl space-y-6">
+                <div class="text-2xl font-bold text-red-400">평가: 현 정책 유지 시 목표 달성 어려움</div>
+                <ul class="list-disc list-inside text-lg space-y-3 text-gray-300 pl-4">
+                    <li class="list-item">국제 평가: <span class="font-bold">'충분치 않음' (highly insufficient)</span></li>
+                    <li class="list-item">치명적 장애 요인: LNG 의존 심화, 그리드 병목, 수도권 수요 관리 실패.</li>
+                </ul>
+                
+                <div class="text-2xl font-bold text-sky-300 mt-6">핵심 비판: 용인 산단 LNG 발전 계획</div>
+                <p class="text-xl text-gray-300 pl-4">단기적인 후진적 선택이며, 막대한 온실가스 배출로 <span class="text-red-400 font-semibold">'기후 정의'를 심각하게 훼손</span>.</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Ⅳ. 사회민주당의 3대 핵심 정책 대안 (1) -->
+        <section id="slide-7" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">Ⅳ. 정의로운 분산형 시스템 구축을 위한 3대 핵심 대안</h2>
+            <div class="content-box max-w-4xl space-y-6">
+                <div class="text-3xl font-extrabold text-yellow-300">대안 ① 지역 에너지 주권 확립 및 분산 시스템 도입</div>
+                <ul class="list-disc list-inside text-lg space-y-3 text-gray-300 pl-4">
+                    <li class="list-item">내용: '지역 에너지 헌장' 제정, 전력 소비 지역 내 재생에너지 + ESS 결합 (50% 자립 의무) 부여.</li>
+                    <li class="list-item">신계룡-북천안 적용: 송전선로 건설 <span class="highlight">최종 백지화</span> 선언 및 용인 산단에 '분산 에너지 자립구역' 모델 의무 적용.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: Ⅳ. 사회민주당의 3대 핵심 정책 대안 (2/3) -->
+        <section id="slide-8" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">Ⅳ. 정의로운 분산형 시스템 구축을 위한 3대 핵심 대안</h2>
+            <div class="content-box max-w-5xl space-y-6">
+                <div class="text-3xl font-extrabold text-yellow-300">대안 ② 전력 수요 총량 관리 및 지방 분산 유도</div>
+                <ul class="list-disc list-inside text-lg space-y-3 text-gray-300 pl-4">
+                    <li class="list-item">내용: 수도권 과소비 시설(데이터센터 등) 신규 입지에 전력 수요 총량제 즉각 실시.</li>
+                    <li class="list-item">신계룡-북천안 적용: 수도권 전력 공급 전 <span class="highlight">용인 반도체 산단 추진의 적정성 및 입지 재검토</span> 요구.</li>
+                </ul>
+
+                <div class="text-3xl font-extrabold text-yellow-300 pt-4">대안 ③ 지역별 차등 전기요금제 (LMP) 전면 도입</div>
+                <ul class="list-disc list-inside text-lg space-y-3 text-gray-300 pl-4">
+                    <li class="list-item">내용: 송전 비용을 소비자가 부담하게 하여, 생산지-소비지 간 불균형에 따른 '외부 비용'을 내부화.</li>
+                    <li class="list-item">신계룡-북천안 적용: 대전시 송전선로 피해 지역 특별 지원 조례 제정 추진.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: Ⅳ. 2050 목표 달성을 위한 4대 정책 권고 사항 -->
+        <section id="slide-9" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">Ⅳ. 2050 목표 달성을 위한 4대 정책 권고 사항</h2>
+            <div class="content-box max-w-5xl space-y-6">
+                <ul class="grid grid-cols-2 gap-x-8 gap-y-4 text-lg text-gray-300">
+                    <li class="list-item">1. 전력부문 빠른 저탄소화: 재생에너지 목표 최소 40% 상향, <span class="text-sky-400">그린 패스트트랙</span> 도입.</li>
+                    <li class="list-item">2. 그리드 현대화: 송전망 건설 시 <span class="text-sky-400">지하화 비율 90% 이상</span> 의무화, 공공 자본 우선 투입.</li>
+                    <li class="list-item">3. 수요관리 및 산업전환: 전력수요 총량 관리 수단 도입, <span class="text-sky-400">에너지 효율 혁명</span> 추진.</li>
+                    <li class="list-item">4. 지역기반 분산전원과 기후정의: '시민 발전소' 확대, 주민에게 <span class="text-sky-400">공정한 보상·참여 메커니즘</span> 법적 보장.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: 결론 및 대전시당의 행동 촉구 -->
+        <section id="slide-10" class="slide">
+            <h2 class="text-4xl font-extrabold text-white mb-8">결론: 에너지 정의 실현을 위한 투쟁 선언</h2>
+            <div class="content-box max-w-4xl space-y-6">
+                <div class="text-3xl font-extrabold text-red-400">대전시당의 강력한 행동 촉구</div>
+                <ol class="list-decimal list-inside text-xl space-y-3 text-gray-300 pl-4 font-bold">
+                    <li class="list-item">대전시의 즉각적인 반대 입장 표명 및 책임 있는 행정 대응 촉구.</li>
+                    <li class="list-item">'폭탄돌리기식' 입지선정위원회 운영 거부 및 시민 주도의 민주적 절차 요구.</li>
+                    <li class="list-item">시민사회 연대 및 '대전송전탑건설백지화대책위' 활동에 모든 역량 집중.</li>
+                </ol>
+                <p class="text-2xl font-bold mt-8 text-sky-300">우리는 에너지 정의를 실현할 때까지 투쟁할 것입니다.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-6">
+        <button id="prev-btn" class="px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-full shadow-lg transition duration-300 opacity-50" disabled>
+            ← 이전
+        </button>
+        <div id="slide-number" class="px-4 py-3 text-white font-bold text-xl rounded-full bg-gray-800 flex items-center justify-center">
+            1 / 10
+        </div>
+        <button id="next-btn" class="px-6 py-3 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-full shadow-lg transition duration-300">
+            다음 →
+        </button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const slideNumberDisplay = document.getElementById('slide-number');
+        let currentSlideIndex = 0;
+        const totalSlides = slides.length;
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+            });
+            slides[currentSlideIndex].classList.add('active');
+            
+            // Update navigation status
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+
+            prevBtn.classList.toggle('opacity-50', currentSlideIndex === 0);
+            nextBtn.classList.toggle('opacity-50', currentSlideIndex === totalSlides - 1);
+            
+            slideNumberDisplay.textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
+        }
+
+        function goToNextSlide() {
+            if (currentSlideIndex < totalSlides - 1) {
+                currentSlideIndex++;
+                updateSlide();
+            }
+        }
+
+        function goToPrevSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlide();
+            }
+        }
+
+        // Event Listeners
+        nextBtn.addEventListener('click', goToNextSlide);
+        prevBtn.addEventListener('click', goToPrevSlide);
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                goToNextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                goToPrevSlide();
+            }
+        });
+
+        // Initialize presentation
+        updateSlide();
+    </script>
+</body>
+</html>
