@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한민국 반도체 산업 정책 심층 보고서: 3축 분산 전략</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Urbanist:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc; /* Light Slate Background */
+            color: #1e293b; /* Dark Slate Text */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+            height: 100vh;
+        }
+
+        /* Custom Colors - Social Democratic Palette */
+        .policy-primary { color: #1C3A5A; } /* Deep Slate Blue - Authority, Vision */
+        .policy-accent { color: #E32636; } /* Social Crimson - Progress, Action */
+        .policy-green { color: #22c55e; } /* Policy Green for Sustainability */
+        
+        .border-policy-primary { border-color: #1C3A5A; }
+        .bg-policy-primary { background-color: #1C3A5A; }
+        
+        h1, h2, h3 { font-family: 'Urbanist', sans-serif; font-weight: 700; }
+        
+        /* Slide Container Styling: Full screen, centered content */
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide-container.active {
+            display: flex; /* Show active slide */
+        }
+        
+        .slide-content {
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            max-height: 800px;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #ffffff;
+        }
+
+        /* Slide Titles - Use Primary Color */
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1C3A5A; /* Deep Slate Blue */
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #1C3A5A;
+            padding-bottom: 0.5rem;
+            text-align: left;
+        }
+        
+        /* Card Styling for Sub-sections */
+        .policy-card {
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            background-color: #f1f5f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        /* Navigation Bar */
+        #navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1e293b;
+            color: white;
+            padding: 0.75rem 2rem;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #navigation button {
+            background-color: #1C3A5A; /* Primary Color for buttons */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            transition: background-color 0.2s;
+        }
+        #navigation button:hover:not(:disabled) {
+            background-color: #12283e; /* Darker Primary on hover */
+        }
+        #navigation button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Responsive adjustments for very small screens */
+        @media (max-width: 640px) {
+            .slide-content {
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+            .slide-title {
+                font-size: 1.75rem;
+            }
+            .headline-lg {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title Page -->
+    <div class="slide-container active" data-slide="1">
+        <div class="slide-content text-center">
+            <div class="flex-grow flex flex-col justify-center items-center">
+                <p class="text-lg font-bold text-gray-500 mb-4">사회민주당 대전시당</p>
+                <h1 class="text-6xl font-black policy-primary inline-block mb-6 border-b-4 border-policy-primary leading-tight">
+                    대한민국 반도체 산업 정책<br>심층 보고서
+                </h1>
+                <h2 class="text-3xl font-light text-gray-600">
+                    수도권 독점을 넘어, 생태적 균형 발전을 위한 대안
+                </h2>
+                <div class="mt-12 text-2xl font-bold policy-primary">
+                    <i class="fa-solid fa-microchip mr-3"></i> 국가 반도체 3축 분산 전략
+                </div>
+            </div>
+            <p class="text-sm text-gray-400">페이지 1/9</p>
+        </div>
+    </div>
+
+    <!-- Slide 2: I. 현황: 명암의 현주소 -->
+    <div class="slide-container" data-slide="2">
+        <div class="slide-content">
+            <h2 class="slide-title">I. 국가 경제의 중추, 명암(明暗)의 현주소</h2>
+            <p class="mb-6 text-gray-700 font-medium">
+                대한민국 반도체 산업은 국가 수출의 핵심이지만, 심각한 지역 불균형과 환경 리스크를 내포하고 있습니다.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6 flex-grow items-center">
+                <!-- Light -->
+                <div class="policy-card border-t-4 border-blue-400">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3"><i class="fa-solid fa-sun mr-2"></i> 밝은 면 (성장 동력)</h3>
+                    <ul class="list-disc pl-5 ml-2 text-base text-gray-700 space-y-2">
+                        <li>수출 1위 품목으로 국가 경제 안정에 기여</li>
+                        <li>글로벌 기술 경쟁에서 우위를 점하는 핵심 전략 자산</li>
+                        <li>대규모 투자가 계획되어 있어 미래 성장 기대</li>
+                    </ul>
+                </div>
+                <!-- Shadow -->
+                <div class="policy-card border-t-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-600 mb-3"><i class="fa-solid fa-moon mr-2"></i> 어두운 면 (지역 독점과 소멸)</h3>
+                    <ul class="list-disc pl-5 ml-2 text-base text-gray-700 space-y-2">
+                        <li>인력, Fab, 기업의 80%가 수도권에 초집중</li>
+                        <li>양질의 일자리 독점으로 인한 지방 인구 유출 심화</li>
+                        <li>청주, 구미 등 기존 반도체 벨트의 경쟁력 약화</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-sm text-gray-400 mt-4 text-right">페이지 2/9</p>
+        </div>
+    </div>
+    
+    <!-- Slide 3: II. 시스템 리스크 진단 -->
+    <div class="slide-container" data-slide="3">
+        <div class="slide-content">
+            <h2 class="slide-title">II. 에너지 정의와 안보, 시스템 리스크 진단</h2>
+            
+            <div class="space-y-6 flex-grow">
+                
+                <h3 class="text-2xl font-bold policy-accent mb-3"><i class="fa-solid fa-bolt mr-2"></i> 에너지 식민지화의 그림자</h3>
+                <div class="bg-red-50 p-4 rounded-xl border border-red-200">
+                    <p class="text-lg policy-accent font-medium">
+                        용인 클러스터 전력(10GW)은 수도권 자체 수급이 불가능하며, 지방의 환경적 희생을 강요하고 있습니다. 이는 명백한 에너지 정의(Energy Justice) 위반입니다.
+                    </p>
+                </div>
+                
+                <h3 class="text-2xl font-bold policy-green mb-3 mt-8"><i class="fa-solid fa-cloud-sun-rain mr-2"></i> 환경 및 글로벌 공급망 문제</h3>
+                <ul class="list-disc pl-5 ml-2 text-lg text-gray-700 space-y-2 bg-gray-50 p-4 rounded-xl">
+                    <li>RE100 달성 불가: 재생에너지 부지 부족으로 글로벌 납품에서 제외될 치명적인 위험이 있습니다.</li>
+                    <li>물 분쟁 심화: 일 65만 톤의 초순수 확보가 타 지역 농업 용수를 위협합니다.</li>
+                    <li>안보 리스크: 세계 메모리 생산 시설이 휴전선 인근에 초집중되어 있어 국가 안보상 취약합니다.</li>
+                </ul>
+            </div>
+            <p class="text-sm text-gray-400 mt-4 text-right">페이지 3/9</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: III. 정책 대안: 규제 혁신과 이익 공유 -->
+    <div class="slide-container" data-slide="4">
+        <div class="slide-content">
+            <h2 class="slide-title">III. 정책 대안: 규제 혁신과 이익 공유</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 flex-grow mb-6">
+                <!-- Regulation -->
+                <div class="policy-card border-l-4 border-policy-primary bg-blue-50">
+                    <h3 class="text-2xl font-bold policy-primary mb-2"><i class="fa-solid fa-gavel mr-2"></i> 수도권 개발 총량제 강화</h3>
+                    <p class="text-base text-gray-700">
+                        수도권 내 대규모 공장 건축 허가 총량을 엄격히 재설정하여, 물리적으로 추가적인 대규모 증설을 차단하고 지방 분산을 유도합니다.
+                    </p>
+                </div>
+                <!-- Veto Right -->
+                <div class="policy-card border-l-4 policy-green bg-green-50">
+                    <h3 class="text-2xl font-bold policy-green mb-2"><i class="fa-solid fa-hand-paper mr-2"></i> 전력영향평가 주민 비토권</h3>
+                    <p class="text-base text-gray-700">
+                        대규모 전력 시설 건설 시, 피해 지역 주민들에게 허가에 대한 거부권(비토권)을 부여하여 환경 정의를 실현하고 일방적 희생을 막습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="policy-card border-t-4 border-yellow-500 bg-yellow-50">
+                <h3 class="text-2xl font-bold text-yellow-700 mb-2"><i class="fa-solid fa-hand-holding-dollar mr-2"></i> 지방 상생세 (가칭) 도입</h3>
+                <p class="text-base text-gray-700">
+                    수도권 반도체 기업이 지방 자원(전력, 용수) 사용 대가로 발생하는 초과 이익에 대해 세금을 징수하고, 이를 피해 지역의 복지 및 인재 육성에 투자합니다.
+                </p>
+            </div>
+
+            <p class="text-sm text-gray-400 mt-4 text-right">페이지 4/9</p>
+        </div>
+    </div>
+
+    <!-- Slide 5: IV. 국가 반도체 3축 분산 전략 (Grouping Slide) - NEW -->
+    <div class="slide-container" data-slide="5">
+        <div class="slide-content text-center">
+            <div class="flex-grow flex flex-col justify-center items-center">
+                <p class="text-xl font-bold text-gray-500 mb-4">IV. 정책 비전</p>
+                <h1 class="text-6xl font-black policy-accent inline-block mb-6 border-b-4 border-policy-accent leading-tight">
+                    국가 반도체 3축 분산 전략
+                </h1>
+                <h2 class="text-3xl font-light text-gray-600">
+                    안보·환경·균형 발전을 위한 전략적 배치
+                </h2>
+                <div class="mt-12 text-2xl font-bold policy-primary">
+                    <i class="fa-solid fa-map-location-dot mr-3"></i> 충청권, 호남권, 영남권 특화 전략
+                </div>
+            </div>
+            <p class="text-sm text-gray-400 mt-4 text-right">페이지 5/9</p>
+        </div>
+    </div>
+    
+    <!-- Slide 6: IV-1. 제1축: 충청권 (R&D Headquarter) (Shifted from 5) -->
+    <div class="slide-container" data-slide="6">
+        <div class="slide-content">
+            <h2 class="slide-title">IV-1. 제1축: 충청권 (R&D Headquarter)</h2>
+            <div class="flex-grow flex flex-col justify-center items-center text-center">
+                <i class="fa-solid fa-brain text-7xl text-blue-600 mb-6"></i>
+                <h3 class="text-4xl font-black text-blue-700 mb-4">반도체의 두뇌, 선행 연구개발 거점</h3>
+                <p class="text-xl text-gray-700 max-w-2xl leading-relaxed">
+                    대전 나노·반도체 국가산단 중심. KAIST, ETRI 등 연구기관과 연계하여
+                    팹리스, Mini-Fab, 선행 연구개발에 특화된 역할을 담당합니다.
+                    풍부한 연구 인력과 기존 과학 인프라를 활용하여 미래 기술을 선도합니다.
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 mt-4 text-right">페이지 6/9</p>
+        </div>
+    </div>
+
+    <!-- Slide 7: IV-2. 제2축: 호남권 (RE100 Manufacturing Hub) (Shifted from 6) -->
+    <div class="slide-container" data-slide="7">
+        <div class="slide-content">
+            <h2 class="slide-title">IV-2. 제2축: 호남권 (RE100 Manufacturing Hub)</h2>
+            <div class="flex-grow flex flex-col justify-center items-center text-center">
+                <i class="fa-solid fa-solar-panel text-7xl policy-green mb-6"></i>
+                <h3 class="text-4xl font-black policy-green mb-4">글로벌 기준, RE100 기반 생산 허브</h3>
+                <p class="text-xl text-gray-700 max-w-2xl leading-relaxed">
+                    풍부한 태양광 및 해상풍력 자원을 활용하여
+                    RE100 파운드리 유치에 집중합니다.
+                    전력 생산지 인근에 공장을 배치하여 장거리 송전 비용과 환경 갈등을 근본적으로 해소합니다.
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 mt-4 text-right">페이지 7/9</p>
+        </div>
+    </div>
+
+    <!-- Slide 8: IV-3. 제3축: 영남권 (Advanced Specialization) (Shifted from 7) -->
+    <div class="slide-container" data-slide="8">
+        <div class="slide-content">
+            <h2 class="slide-title">IV-3. 제3축: 영남권 (Advanced Specialization)</h2>
+            <div class="flex-grow flex flex-col justify-center items-center text-center">
+                <i class="fa-solid fa-microchip text-7xl text-purple-600 mb-6"></i>
+                <h3 class="text-4xl font-black text-purple-700 mb-4">고부가가치 특화, 소부장 및 후공정 벨트</h3>
+                <p class="text-xl text-gray-700 max-w-2xl leading-relaxed">
+                    기존 산업 인프라를 활용하여
+                    소부장(구미), 전력반도체(부산), 첨단 후공정(Packaging) 등
+                    고부가가치 특화 벨트를 구축하고, 지역 산업과의 시너지를 극대화합니다.
+                </p>
+            </div>
+            <p class="text-sm text-gray-400 mt-4 text-right">페이지 8/9</p>
+        </div>
+    </div>
+
+    <!-- Slide 9: V. 결론 및 정책 비전 (Shifted from 8) -->
+    <div class="slide-container" data-slide="9">
+        <div class="slide-content text-center">
+            <div class="flex-grow flex flex-col justify-center items-center">
+                <h2 class="slide-title inline-block border-b-2 border-policy-primary mb-8">V. 결론: 지속가능한 기술, 정의로운 성장</h2>
+
+                <blockquote class="text-3xl font-bold text-gray-800 italic border-l-4 border-policy-primary pl-6 mb-8 leading-snug">
+                    "기술은 사람을 향하고, 공장은 에너지와 전략을 따라야 합니다."
+                </blockquote>
+                
+                <p class="text-xl text-gray-700 max-w-2xl leading-relaxed">
+                    수도권 과밀 집적을 통한 성장은 한계에 다다랐습니다. 반도체 산업이 지속 가능한 성장을 이루려면, 에너지 정의와 안보를 기반으로 한 3축 분산 전략이 필수적입니다. 이는 대한민국의 새로운 지역 균형 발전의 토대가 될 것입니다.
+                </p>
+            </div>
+
+            <div class="mt-8 text-center text-gray-500 text-base">
+                <p>사회민주당 대전시당</p>
+                <p class="font-bold policy-primary">2025. 12.</p>
+            </div>
+            <p class="text-sm text-gray-400 mt-4 text-right">페이지 9/9</p>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div id="navigation">
+        <button id="prevBtn" disabled><i class="fa-solid fa-arrow-left mr-2"></i> 이전</button>
+        <span id="slideIndicator" class="font-bold text-lg">1 / 9</span>
+        <button id="nextBtn">다음 <i class="fa-solid fa-arrow-right ml-2"></i></button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide-container');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicator = document.getElementById('slideIndicator');
+        const totalSlides = slides.length;
+        let currentSlideIndex = 0; // 0-indexed
+
+        function showSlide(index) {
+            // Check boundaries
+            if (index < 0 || index >= totalSlides) return;
+
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+
+            // Show the current slide
+            slides[index].classList.add('active');
+            currentSlideIndex = index;
+
+            // Update navigation
+            updateNavigation();
+        }
+
+        function updateNavigation() {
+            // Update indicator text
+            indicator.textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
+
+            // Disable/Enable buttons
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+        }
+
+        // Event Listeners
+        nextBtn.addEventListener('click', () => {
+            if (currentSlideIndex < totalSlides - 1) {
+                showSlide(currentSlideIndex + 1);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                showSlide(currentSlideIndex - 1);
+            }
+        });
+
+        // Keyboard navigation (optional, but good for presentations)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                if (currentSlideIndex < totalSlides - 1) {
+                    showSlide(currentSlideIndex + 1);
+                }
+            } else if (e.key === 'ArrowLeft') {
+                if (currentSlideIndex > 0) {
+                    showSlide(currentSlideIndex - 1);
+                }
+            }
+        });
+
+        // Initialize the first slide and navigation state
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(0);
+        });
+    </script>
+</body>
+</html>
